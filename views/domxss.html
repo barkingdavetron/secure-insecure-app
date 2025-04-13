@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM XSS Demo</title>
+</head>
+<body>
+  <h1>Welcome to the DOM XSS Demo</h1>
+  <p>This page reads from the URL and injects it into the DOM without sanitization.</p>
+
+  <div id="output"></div>
+
+  <script>
+    //  XSS vulnerability 
+    const params = new URLSearchParams(window.location.search);
+    const msg = params.get("msg");
+
+    if (msg) {
+      //  Insertin directly into innerHTML 
+      document.getElementById("output").innerHTML = msg;
+    }
+  </script>
+</body>
+</html>

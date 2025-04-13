@@ -1,0 +1,8 @@
+<h1>Dashboard</h1>
+<a href="/create?user_id=<%= user_id %>">Create New Post</a>
+<!--  vulnerable to stored XSS -->
+<ul>
+  <% posts.forEach(post => { %>
+    <li><%- post.content %></li> 
+    <% }) %>
+</ul>
