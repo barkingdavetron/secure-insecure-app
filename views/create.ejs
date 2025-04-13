@@ -1,0 +1,7 @@
+<h1>Create Post</h1>
+<form action="/create" method="POST">
+  <input type="hidden" name="user_id" value="<%= user_id %>">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <textarea name="content" placeholder="Write your post here..." required></textarea>
+  <button type="submit">Post</button>
+</form>

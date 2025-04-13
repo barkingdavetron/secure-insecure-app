@@ -1,0 +1,13 @@
+<h1>Dashboard</h1>
+<a href="/create?user_id=<%= user_id %>">Create New Post</a>
+<a href="/logout" style="position: absolute; top: 20px; right: 20px;">Logout</a>
+
+<ul>
+  <% if (posts && posts.length > 0) { %>
+    <% posts.forEach(post => { %>
+      <li><%= post.content %></li> <!-- Escapes HTML to prevent XSS -->
+    <% }); %>
+  <% } else { %>
+    <li>No posts available.</li>
+  <% } %>
+</ul>
